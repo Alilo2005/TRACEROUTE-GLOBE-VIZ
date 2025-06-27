@@ -1,26 +1,204 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --background: #000000;
+  --foreground: #00ff00;
+  --neon-green: #00ff00;
+  --neon-green-dim: #008000;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: #000000;
+  color: #00ff00;
+  font-family: ui-monospace, 'Fira Code', 'JetBrains Mono', monospace;
+  overflow-x: hidden;
+}
+
+.neon-glow {
+  text-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00, 0 0 15px #00ff00;
+}
+
+.neon-border {
+  border: 1px solid #00ff00;
+  box-shadow: 0 0 5px #00ff00, inset 0 0 5px #00ff00;
+}
+
+.neon-button {
+  border: 1px solid #00ff00;
+  background: transparent;
+  color: #00ff00;
+  transition: all 0.3s ease;
+}
+
+.neon-button:hover {
+  background: #00ff00;
+  color: #000000;
+  box-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00;
+  text-shadow: none;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #000000;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #00ff00;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #008000;
+}
+
+/* Terminal cursor animation */
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+.cursor-blink {
+  animation: blink 1s infinite;
+}
+
+/* Enhanced glow effects */
+.terminal-glow {
+  box-shadow: 
+    0 0 5px #00ff00,
+    0 0 10px #00ff00,
+    0 0 15px #00ff00,
+    inset 0 0 5px rgba(0, 255, 0, 0.1);
+}
+
+/* Scan line effect */
+@keyframes scan-line {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(100vh); }
+}
+
+.scan-line {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #00ff00, transparent);
+  animation: scan-line 3s linear infinite;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.3;
+}
+
+/* Matrix-style text selection */
+::selection {
+  background: #00ff00;
+  color: #000000;
+}
+
+::-moz-selection {
+  background: #00ff00;
+  color: #000000;
+}
+
+/* Data stream effect */
+@keyframes data-flow {
+  0% { 
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% { 
+    transform: translateX(200%);
+    opacity: 0;
+  }
+}
+
+.data-stream::before {
+  content: "01001001 01101100 01101111 01110110 01100101 01110101";
+  position: absolute;
+  white-space: nowrap;
+  animation: data-flow 8s linear infinite;
+  color: #00ff00;
+  opacity: 0.3;
+  font-size: 10px;
+  top: -20px;
+  left: 0;
+}
+
+/* Glitch effect */
+@keyframes glitch {
+  0% {
+    transform: translateX(0);
+  }
+  20% {
+    transform: translateX(-2px);
+  }
+  40% {
+    transform: translateX(2px);
+  }
+  60% {
+    transform: translateX(-1px);
+  }
+  80% {
+    transform: translateX(1px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.glitch-effect {
+  animation: glitch 0.3s ease-in-out infinite alternate;
+}
+
+/* Typewriter effect */
+@keyframes typewriter {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+.typewriter {
+  overflow: hidden;
+  border-right: 2px solid #00ff00;
+  white-space: nowrap;
+  animation: typewriter 2s steps(20) 1s both, blink 1s infinite step-end;
+}
+
+/* Loading dots */
+@keyframes loading-dots {
+  0%, 20% {
+    color: #00ff00;
+    transform: scale(1);
+  }
+  50% {
+    color: #008000;
+    transform: scale(1.2);
+  }
+  100% {
+    color: #00ff00;
+    transform: scale(1);
+  }
+}
+
+.loading-dots span {
+  animation: loading-dots 1.4s infinite ease-in-out both;
+}
+
+.loading-dots span:nth-child(1) { animation-delay: -0.32s; }
+.loading-dots span:nth-child(2) { animation-delay: -0.16s; }
+.loading-dots span:nth-child(3) { animation-delay: 0s; }
+
+/* Terminal prompt with cursor */
+.terminal-prompt::after {
+  content: "▮";
+  animation: blink 1s infinite;
+  color: #00ff00;
 }
