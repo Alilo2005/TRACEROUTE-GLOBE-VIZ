@@ -23,7 +23,6 @@
 
 🚀 **[LIVE DEMO: https://traceroute-ali-ali-mahdis-projects.vercel.app](https://traceroute-ali-ali-mahdis-projects.vercel.app)**
 
-![Screenshot](./example.png)
 
 </div>
 
