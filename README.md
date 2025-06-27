@@ -21,6 +21,8 @@
 
 **🔴 [LIVE SYSTEM]** **🟢 [SECURE]** **🟡 [HACKER-PROOF]**
 
+🚀 **[LIVE DEMO: https://traceroute-ali-ali-mahdis-projects.vercel.app](https://traceroute-ali-ali-mahdis-projects.vercel.app)**
+
 ![Screenshot](./example.png)
 
 </div>
@@ -93,8 +95,8 @@ SECURITY_MODULES:
 
 ```bash
 # [STEP_1] CLONE_REPOSITORY
-$ git clone <repository_url>
-$ cd traceroute-globe-viz
+$ git clone https://github.com/Alilo2005/TRACEROUTE-GLOBE-VIZ.git
+$ cd TRACEROUTE-GLOBE-VIZ
 
 # [STEP_2] INSTALL_DEPENDENCIES  
 $ npm install
@@ -230,6 +232,11 @@ POST /api/geolocation
 
 ```bash
 $ deploy_protocol --production
+
+🚀 LIVE DEPLOYMENT:
+└── Production URL: https://traceroute-ali-ali-mahdis-projects.vercel.app
+└── GitHub Repo: https://github.com/Alilo2005/TRACEROUTE-GLOBE-VIZ
+└── Status: ✅ OPERATIONAL
 
 [OPTION_1] VERCEL_DEPLOYMENT
 ├── git push origin main
