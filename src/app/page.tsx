@@ -54,7 +54,7 @@ export default function HomePage() {
         animate={{ opacity: 1, y: 0 }}
         className="border-b border-neon-green p-6"
       >
-        <div className="container mx-auto">
+        <div className="container mx-auto px-4">
           <motion.div 
             className="text-xs font-mono text-neon-green-dim mb-2 opacity-75"
             initial={{ width: 0 }}
@@ -64,7 +64,7 @@ export default function HomePage() {
             [SYSTEM_INIT] Loading neural_network_tracer v2.1.4<span className="animate-terminal-cursor">_</span>
           </motion.div>
           <motion.h1 
-            className="text-4xl font-mono neon-glow text-center"
+            className="hidden sm:block text-4xl font-mono neon-glow text-center"
             initial={{ scale: 0.8, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ duration: 1, delay: 1 }}
@@ -72,15 +72,17 @@ export default function HomePage() {
             ╔═══════════════════════════════════╗
           </motion.h1>
           <motion.h1 
-            className="text-3xl font-mono neon-glow text-center py-1"
+            className="text-2xl sm:text-3xl font-mono neon-glow text-center py-1 break-words max-w-full mx-auto"
             initial={{ scale: 0.8, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ duration: 1, delay: 1.2 }}
           >
-            ║    TRACEROUTE_GLOBE_v2.1.4       ║
+            <span className="hidden sm:inline">║</span>
+            <span className="mx-2">TRACEROUTE_GLOBE_v2.1.4</span>
+            <span className="hidden sm:inline">║</span>
           </motion.h1>
           <motion.h1 
-            className="text-4xl font-mono neon-glow text-center"
+            className="hidden sm:block text-4xl font-mono neon-glow text-center"
             initial={{ scale: 0.8, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ duration: 1, delay: 1.4 }}
@@ -88,7 +90,7 @@ export default function HomePage() {
             ╚═══════════════════════════════════╝
           </motion.h1>
           <motion.p 
-            className="text-center font-mono text-neon-green-dim mt-3"
+            className="text-center font-mono text-neon-green-dim mt-3 px-2"
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 1, delay: 1.6 }}
@@ -96,7 +98,7 @@ export default function HomePage() {
             [NEURAL_NET] Real-time network topology visualization on 3D sphere
           </motion.p>
           <motion.div 
-            className="text-center text-xs font-mono text-neon-green-dim mt-2 opacity-75"
+            className="text-center text-xs font-mono text-neon-green-dim mt-2 opacity-75 flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-4"
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 1, delay: 1.8 }}
@@ -107,14 +109,14 @@ export default function HomePage() {
             >
               STATUS: ONLINE
             </motion.span>
-            {" | "}
+            <span className="hidden sm:inline">|</span>
             <motion.span
               animate={{ opacity: [1, 0.5, 1] }}
               transition={{ duration: 2, repeat: Infinity, delay: 0.5 }}
             >
               PROTOCOLS: ICMP,TCP
             </motion.span>
-            {" | "}
+            <span className="hidden sm:inline">|</span>
             <motion.span
               animate={{ opacity: [1, 0.5, 1] }}
               transition={{ duration: 2, repeat: Infinity, delay: 1 }}
@@ -126,10 +128,10 @@ export default function HomePage() {
       </motion.header>
 
       {/* Main Content */}
-      <main className="container mx-auto p-6">
+      <main className="container mx-auto p-6 px-4">
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
           {/* Left Panel - Controls */}
-          <div className="lg:col-span-1 space-y-6">
+          <div className="lg:col-span-1 space-y-6 min-w-0">
             <TraceInput
               onStart={handleStart}
               onStop={stopTraceroute}
@@ -225,7 +227,7 @@ export default function HomePage() {
           </div>
 
           {/* Right Panel - Globe */}
-          <div className="lg:col-span-3">
+          <div className="lg:col-span-3 min-w-0">
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
@@ -260,14 +262,14 @@ export default function HomePage() {
         animate={{ opacity: 1 }}
         className="border-t border-neon-green p-6 mt-12"
       >
-        <div className="container mx-auto">
+        <div className="container mx-auto px-4">
           <div className="text-center font-mono text-xs text-neon-green-dim space-y-1">
-            <div className="flex justify-center items-center space-x-8">
+            <div className="flex justify-center items-center gap-x-8 gap-y-1 flex-wrap">
               <span>SYSTEM_STATUS: [OPERATIONAL]</span>
               <span>NETWORK_TRACE: [ACTIVE]</span>
               <span>SECURITY_LEVEL: [MAXIMUM]</span>
             </div>
-            <div className="flex justify-center items-center space-x-8 mt-2">
+            <div className="flex justify-center items-center gap-x-8 gap-y-1 flex-wrap mt-2">
               <span>UPTIME: [99.9%]</span>
               <span>PROTOCOLS: [ICMP/TCP/UDP]</span>
               <span>MODE: [REALTIME]</span>

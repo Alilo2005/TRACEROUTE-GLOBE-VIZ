@@ -159,6 +159,23 @@ body {
   animation: glitch 0.3s ease-in-out infinite alternate;
 }
 
+/* Utility colors (tailwind custom names hinted in UI) */
+.text-neon-green { color: var(--neon-green); }
+.text-neon-green-dim { color: var(--neon-green-dim); }
+.border-neon-green { border-color: var(--neon-green); }
+.border-neon-green-dim { border-color: var(--neon-green-dim); }
+.bg-neon-green { background-color: var(--neon-green); }
+
+/* Animations used in components */
+@keyframes pulse-green {
+  0%, 100% { opacity: 1; filter: drop-shadow(0 0 6px #00ff00); }
+  50% { opacity: 0.6; filter: drop-shadow(0 0 2px #00ff00); }
+}
+.animate-pulse-green { animation: pulse-green 1.5s ease-in-out infinite; }
+
+/* Fake terminal cursor class used in header */
+.animate-terminal-cursor { animation: blink 1s steps(2, end) infinite; }
+
 /* Typewriter effect */
 @keyframes typewriter {
   from { width: 0 }

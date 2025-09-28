@@ -21,9 +21,6 @@
 
 **🔴 [LIVE SYSTEM]** **🟢 [SECURE]** **🟡 [HACKER-PROOF]**
 
-🚀 **[LIVE DEMO: https://traceroute-ali-ali-mahdis-projects.vercel.app](https://traceroute-ali-ali-mahdis-projects.vercel.app)**
-
-
 </div>
 
 ---
