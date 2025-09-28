@@ -78,7 +78,7 @@ export default function HomePage() {
             transition={{ duration: 1, delay: 1.2 }}
           >
             <span className="hidden sm:inline">║</span>
-            <span className="mx-2">TRACEROUTE_GLOBE_v2.1.4</span>
+            <span className="mx-2">TRACEROUTE_GLOBE</span>
             <span className="hidden sm:inline">║</span>
           </motion.h1>
           <motion.h1 
